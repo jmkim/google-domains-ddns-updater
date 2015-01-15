@@ -19,8 +19,8 @@ do_main()
 {
 	# Google Domains Dynamin DNS
 	if [ ! -z $4 ]
-	then local OUTPUT=$(wget -qO- --http-user="$2" --http-password="$3" "https://domains.google.com/nic/update?hostname=$1&myip=$4")
-	else local OUTPUT=$(wget -qO- --http-user="$2" --http-password="$3" "https://domains.google.com/nic/update?hostname=$1")
+	then	local OUTPUT=$(wget -qO- --http-user="$2" --http-password="$3" "https://domains.google.com/nic/update?hostname=$1&myip=$4")
+	else	local OUTPUT=$(wget -qO- --http-user="$2" --http-password="$3" "https://domains.google.com/nic/update?hostname=$1")
 	fi
 
 	# Print output
@@ -28,13 +28,13 @@ do_main()
 
 	# Logging output
 	if [ ! -z $LOGFILE ]
-	then printf "$(date +'%F %T') $1 $OUTPUT\n" >> $LOGFILE
+	then	printf "$(date +'%F %T') $1 $OUTPUT\n" >> $LOGFILE
 	fi
 
 	# Set return value
 	if [ "${OUTPUT:0:4}" == "good" ] || [ "${OUTPUT:0:5}" == "nochg" ]
-	then return 0
-	else return 1
+	then	return 0
+	else	return 1
 	fi
 }
 
@@ -43,8 +43,7 @@ type_1()
 # http://stackoverflow.com/questions/20488315
 local AMOUNT=$(cat "$JSONFILE"| grep -Po '(?<="amount": )[0-9]*')
 for (( i=1; i<=$AMOUNT; ++i ))
-do
-	local HOSTNAME=$(cat "$JSONFILE"| grep -Po '(?<="hostname": ")[^"]*'| sed "$i!d") 
+do	local HOSTNAME=$(cat "$JSONFILE"| grep -Po '(?<="hostname": ")[^"]*'| sed "$i!d") 
 	local USERNAME=$(cat "$JSONFILE"| grep -Po '(?<="username": ")[^"]*'| sed "$i!d") 
 	local PASSWORD=$(cat "$JSONFILE"| grep -Po '(?<="password": ")[^"]*'| sed "$i!d")
 	do_main $HOSTNAME $USERNAME $PASSWORD
@@ -70,8 +69,7 @@ case "$1" in
         	echo "Error: argument '$1' not supported" >&2
         	exit 3
         ;;
-	start) type_1;;
-	stop) type_1;;
+	start|stop) type_1;;
 	*)
 		if [ -z $3 ]
 		then do_help
