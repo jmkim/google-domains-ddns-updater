@@ -4,7 +4,7 @@
 
 ### Installation
 
-Before install, **make your own [host db](#json-example) first**.
+*Before install, **make your own [JSON](#json-example) first**.*
 
 On Terminal:
 ```bash
