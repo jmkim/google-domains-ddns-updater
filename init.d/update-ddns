@@ -13,7 +13,7 @@
 LOGFILE="example.log"
 
 #JSONFILE="/var/lib/update-ddns/example.json"
-JSONFILE="example2.json"
+JSONFILE="example.json"
 
 do_main()
 {
