@@ -26,19 +26,19 @@ Add line below using `crontab -e`:
 ```json
 {
 	"amount": 3,
-	"host":
+	"host1":
 	{
 		"hostname": "mysubdomain.mydomain",
 		"username": "iVETU0O6r0CTNYdX",
 		"password": "XsaMlfmzSU1dRrMg"
 	},
-	"host":
+	"host2":
 	{
 		"hostname": "mysubdomain2.mydomain",
 		"username": "sUNeCRROUlnYbyDJ",
 		"password": "afM95PIqWOGSNHHw"
 	},
-	"host":
+	"host3":
 	{
 		"hostname": "mysubdomain3.mydomain",
 		"username": "tNCcjHOKHyVnHTg0",
