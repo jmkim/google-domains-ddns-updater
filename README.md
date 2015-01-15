@@ -10,13 +10,13 @@ You can update your IP address every few minutes using a `cron`, and can update 
 
 *Before install, make your own [JSON](#json-example) first.*
 
-On Terminal:
+Using `update-rc.d`:
 ```bash
 # Update IP at runlevel 0 1 2 3 4 5 6 (while booting, rebooting, shutdown, etc.)
 update-rc.d bootmail start 90 0 1 2 3 4 5 6 .
 ```
 
-Add line below using `crontab -e`.
+Add line below using `crontab -e`:
 ```bash
 # Update IP for every 5 mins
 */5 *    *   *   *   /etc/init.d/update-ddns
