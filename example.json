@@ -1,0 +1,21 @@
+{
+	"amount": 3,
+	"host":
+	{
+		"hostname": "mysubdomain.mydomain",
+		"username": "iVETU0O6r0CTNYdX",
+		"password": "XsaMlfmzSU1dRrMg"
+	},
+	"host":
+	{
+		"hostname": "mysubdomain2.mydomain",
+		"username": "sUNeCRROUlnYbyDJ",
+		"password": "afM95PIqWOGSNHHw"
+	},
+	"host":
+	{
+		"hostname": "mysubdomain3.mydomain",
+		"username": "tNCcjHOKHyVnHTg0",
+		"password": "GiBeuNrU92JXLd1w"
+	}
+}
