@@ -1,8 +1,12 @@
 ## Google Domains Dynamic DNS Updater
+**This script is Linux `bash` script. Not compatible with `sh` right now.**
+
+### Introduction
+
+This script follows the [LSBInitScripts](https://wiki.debian.org/LSBInitScripts/).
+You can update your IP address every few minutes using a `cron`, and can update at boot time using the `init`.
 
 ### Installation
-
-#### Linux bash script
 
 *Before install, make your own [JSON](#json-example) first.*
 
