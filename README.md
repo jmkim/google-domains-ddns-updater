@@ -1,5 +1,5 @@
 ## Google Domains Dynamic DNS Updater
-*Not compatible with `sh` right now.*
+*Works with `bash`, `zsh`. Not works with `sh`, `ash`, `csh`.*
 
 ### Introduction
 
