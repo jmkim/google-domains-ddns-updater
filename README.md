@@ -46,3 +46,6 @@ Add line below using `crontab -e`:
 	}
 }
 ```
+
+## Links
+* [Google Domains Dynamic DNS Help](https://support.google.com/domains/answer/6147083)
