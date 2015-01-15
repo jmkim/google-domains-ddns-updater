@@ -70,8 +70,7 @@ case "$1" in
         	exit 3
         ;;
 	start|stop) type_1;;
-	*)
-		if [ -z $3 ]
+	*)	if [ -z $3 ]
 		then do_help
 		else type_2 $1 $2 $3 $4
 		fi
