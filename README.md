@@ -48,4 +48,4 @@ Add line below using `crontab -e`:
 ```
 
 ## Links
-* [Google Domains Dynamic DNS Help](https://support.google.com/domains/answer/6147083)
+* [Google Domains Help - Dynamic DNS](https://support.google.com/domains/answer/6147083)
