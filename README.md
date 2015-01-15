@@ -1,5 +1,5 @@
 ## Google Domains Dynamic DNS Updater
-**This script is Linux `bash` script. Not compatible with `sh` right now.**
+*This script is Linux `bash` script. Not compatible with `sh` right now.*
 
 ### Introduction
 
