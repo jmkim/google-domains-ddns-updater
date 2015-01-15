@@ -1,10 +1,10 @@
-# Google Domains Dynamic DNS Updater
-
-## Linux bash script
+## Google Domains Dynamic DNS Updater
 
 ### Installation
 
-*Before install, **make your own [JSON](#json-example) first**.*
+#### Linux bash script
+
+*Before install, make your own [JSON](#json-example) first.*
 
 On Terminal:
 ```bash
