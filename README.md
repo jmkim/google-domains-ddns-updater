@@ -13,7 +13,7 @@ You can update your IP address every few minutes using a `cron`, and can update 
 Using `update-rc.d`:
 ```bash
 # Update IP at runlevel 0 1 2 3 4 5 6 (while booting, rebooting, shutdown, etc.)
-update-rc.d update-ddns start 90 0 1 2 3 4 5 6 .
+update-rc.d update-ddns start 90 2 3 4 5 . stop 90 0 1 6 .
 ```
 
 Add line below using `crontab -e`:
