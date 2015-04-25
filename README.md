@@ -19,7 +19,7 @@ update-rc.d update-ddns start 90 2 3 4 5 . stop 90 0 1 6 .
 Add line below using `crontab -e`:
 ```bash
 # Update IP for every 5 mins
-*/5 *    *   *   *   /etc/init.d/update-ddns
+*/5 *    *   *   *   /etc/init.d/update-ddns start
 ```
 
 ## JSON Example
