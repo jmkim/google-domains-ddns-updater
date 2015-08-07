@@ -1,28 +1,28 @@
-## Google Domains Dynamic DNS Updater
-*Works with `bash`. Not works with `sh`, `ash`, `csh`, `zsh`..*
-
-### Introduction
+# Google Domains DDNS Updater
+Works well with `bash`.
 
 This script follows the [LSBInitScripts](https://wiki.debian.org/LSBInitScripts/).
-You can update your IP address every few minutes using a `cron`, and can update at boot time using the `init`.
+You can update your IP address every few minutes using `cron`, or update it at boot time using `init`.
 
-### Installation
+## Installation
 
-*Before install, make your own [JSON](#json-example) first.*
+*Make your [host information file](#example-of-host-information-file) first.*
 
-Using `update-rc.d`:
+`init`:
 ```bash
 # Update IP at runlevel 0 1 2 3 4 5 6 (while booting, rebooting, shutdown, etc.)
-update-rc.d update-ddns start 90 2 3 4 5 . stop 90 0 1 6 .
+$ update-rc.d update-ddns start 90 2 3 4 5 . stop 90 0 1 6 .
 ```
 
-Add line below using `crontab -e`:
+`cron`:
 ```bash
+$ crontab -e
+
 # Update IP for every 5 mins
 */5 *    *   *   *   /etc/init.d/update-ddns start
 ```
 
-## JSON Example
+## Example of host information file
 ```json
 {
 	"amount": 3,
