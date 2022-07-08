@@ -16,25 +16,17 @@ LOGFILE="/var/log/update-ddns.log"
 JSONFILE="/var/lib/update-ddns/example.json"
 #JSONFILE="example.json"
 
-if [ ! -f /var/lib/update-ddns/ip ]
-then
-touch /var/lib/update-ddns/ip
-fi
-
-IPFILE=$(cat "/var/lib/update-ddns/ip")
-CURRENT_IP=$(curl ifconfig.me)
-
 
 do_main()
 {	
-	if [[ $IPFILE == $CURRENT_IP ]]
+	REGISTERED_IP=$(dig +short $HOSTNAME)
+	PUBLIC_IP=$(curl ifconfig.me)
+	if [[ $REGISTERED_IP == $PUBLIC_IP ]]
 	then
 	printf "$(date) Current IP $CURRENT_IP has not changed, Exiting \n" >> $LOGFILE
 	exit 0
-	else 
-	echo $CURRENT_IP >> $IPFILE
 	fi
-	
+
 	
 	# Google Domains Dynamin DNS
 	if [ ! -z $4 ]
