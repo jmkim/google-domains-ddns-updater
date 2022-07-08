@@ -16,8 +16,18 @@ LOGFILE="example.log"
 #JSONFILE="/var/lib/update-ddns/example.json"
 JSONFILE="example.json"
 
+
 do_main()
-{
+{	
+	REGISTERED_IP=$(dig +short $HOSTNAME)
+	PUBLIC_IP=$(curl ifconfig.me)
+	if [[ $REGISTERED_IP == $PUBLIC_IP ]]
+	then
+	printf "$(date) Current IP $CURRENT_IP has not changed, Exiting \n" >> $LOGFILE
+	exit 0
+	fi
+
+	
 	# Google Domains Dynamin DNS
 	if [ ! -z $4 ]
 	then	local OUTPUT=$(wget -qO- --http-user="$2" --http-password="$3" "https://domains.google.com/nic/update?hostname=$1&myip=$4")

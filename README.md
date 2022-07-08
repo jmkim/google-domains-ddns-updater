@@ -1,6 +1,8 @@
 # Google Domains DDNS Updater
 Works well with `bash`.
 
+Forked to add the ability to check current IP before updating. Google has implemented rate limits and they'll block you if you request to change too often, so it seems like a good idea. 
+
 This script follows the [LSBInitScripts](https://wiki.debian.org/LSBInitScripts/).
 You can update your IP address every few minutes using `cron`, or update it at boot time using `init`.
 
