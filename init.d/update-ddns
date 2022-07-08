@@ -10,14 +10,32 @@
 # Default-Stop:      0 1 6
 ### END INIT INFO
 
-#LOGFILE="/var/log/update-ddns.log"
-LOGFILE="example.log"
+LOGFILE="/var/log/update-ddns.log"
+#LOGFILE="example.log"
 
-#JSONFILE="/var/lib/update-ddns/example.json"
-JSONFILE="example.json"
+JSONFILE="/var/lib/update-ddns/example.json"
+#JSONFILE="example.json"
+
+if [ ! -f /var/lib/update-ddns/ip ]
+then
+touch /var/lib/update-ddns/ip
+fi
+
+IPFILE=$(cat "/var/lib/update-ddns/ip")
+CURRENT_IP=$(curl ifconfig.me)
+
 
 do_main()
-{
+{	
+	if [[ $IPFILE == $CURRENT_IP ]]
+	then
+	printf "$(date) Current IP $CURRENT_IP has not changed, Exiting \n" >> $LOGFILE
+	exit 0
+	else 
+	echo $CURRENT_IP >> $IPFILE
+	fi
+	
+	
 	# Google Domains Dynamin DNS
 	if [ ! -z $4 ]
 	then	local OUTPUT=$(wget -qO- --http-user="$2" --http-password="$3" "https://domains.google.com/nic/update?hostname=$1&myip=$4")
