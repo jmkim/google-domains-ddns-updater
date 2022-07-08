@@ -10,11 +10,11 @@
 # Default-Stop:      0 1 6
 ### END INIT INFO
 
-LOGFILE="/var/log/update-ddns.log"
-#LOGFILE="example.log"
+#LOGFILE="/var/log/update-ddns.log"
+LOGFILE="example.log"
 
-JSONFILE="/var/lib/update-ddns/example.json"
-#JSONFILE="example.json"
+#JSONFILE="/var/lib/update-ddns/example.json"
+JSONFILE="example.json"
 
 
 do_main()
